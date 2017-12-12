@@ -75,3 +75,6 @@ tests/*.retry
 # Eclipse artifacts
 .project
 .pydevproject
+
+# Ignore linked requirements
+ansible-role-requirements.yml
