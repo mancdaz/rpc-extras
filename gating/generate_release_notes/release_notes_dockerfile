@@ -8,8 +8,9 @@ RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 RUN apt-get install -y pandoc
 
-RUN pip install rpc_differ==0.3.1 reno==2.5.1
-RUN pip install git+https://github.com/major/osa_differ@0.3.3
+RUN pip install --upgrade --force-reinstall osa_differ==0.3.4 reno==2.5.1
+ARG CACHEBUST=1
+RUN pip install --upgrade --force-reinstall git+https://github.com/mancdaz/rpc_differ@arr-opt
 
 COPY gating/generate_release_notes/generate_release_notes.sh /generate_release_notes.sh
 COPY gating/generate_release_notes/generate_reno_report.sh /generate_reno_report.sh
